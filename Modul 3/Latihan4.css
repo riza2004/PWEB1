@@ -1,0 +1,31 @@
+.box1 {
+  position: static;
+}
+.box2 {
+  position: relative;
+  top: 20px;
+  background-color: lightblue;
+}
+.box3 {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: lightcoral;
+}
+.box4 {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: lightpink;
+}
+p {
+  float: left;
+  width: 100px;
+  height: 50px;
+  background-color: yellow;
+  margin-right: 10px;
+}
+.clear {
+  clear: left;
+  background-color: orange;
+}

@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+header,
+footer {
+  background-color: lightcoral;
+  padding: 10px;
+  text-align: center;
+}
+main {
+  flex: 1;
+  background-color: lightblue;
+  padding: 20px;
+}
+@media (max-width: 600px) {
+  body {
+    flex-direction: row;
+  }
+  header,
+  footer {
+    flex: 1;
+    padding: 5px;
+  }
+  main {
+    flex: 2;
+  }
+}
