@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>var,let,const</title>
+  </head>
+  <body>
+    <script>
+      // Contoh penggunaan var
+      function contohVar() {
+        if (true) {
+          var x = "Saya menggunakan var";
+          console.log(x); // Output: Saya menggunakan var
+        }
+        console.log(x); // Output: Saya menggunakan var (bocor keluar blok)
+      }
+      contohVar();
+      // console.log(x); // Error: x is not defined (scope x terbatas dalam fungsi)
+
+      // Contoh penggunaan let
+      function contohLet() {
+        if (true) {
+          let y = "Saya menggunakan let";
+          console.log(y); // Output: Saya menggunakan let
+        }
+        // console.log(y); // Error: y is not defined (block scope)
+      }
+      contohLet();
+
+      // Contoh penggunaan const
+      function contohConst() {
+        if (true) {
+          const z = "Saya menggunakan const";
+          console.log(z); // Output: Saya menggunakan const
+        }
+        // console.log(z); // Error: z is not defined (block scope)
+      }
+      contohConst();
+
+      // Perbedaan di luar fungsi
+      if (true) {
+        var a = "Global var";
+        let b = "Block let";
+        const c = "Block const";
+      }
+
+      console.log(a); // Output: Global var (var bisa diakses di global scope)
+      // console.log(b); // Error: b is not defined (let hanya tersedia dalam blok)
+      // console.log(c); // Error: c is not defined (const hanya tersedia dalam blok)
+    </script>
+  </body>
+</html>

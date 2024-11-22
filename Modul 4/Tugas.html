@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Alumni</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      #search-bar {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .alumni-card {
+        padding: 20px;
+        margin-bottom: 10px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .alumni-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Web Alumni</h1>
+    <input
+      type="text"
+      id="search-bar"
+      placeholder="Cari berdasarkan nama atau jurusan..."
+    />
+    <div id="alumni-list">
+      <div class="alumni-card" data-name="Dede Suryana" data-jurusan="Hukum">
+        <h3>Dede Suryana</h3>
+        <p>Hukum</p>
+      </div>
+      <div
+        class="alumni-card"
+        data-name="Naufal Alaudin"
+        data-jurusan="Sistem Informasi"
+      >
+        <h3>Naufal Alaudin</h3>
+        <p>Sistem Informasi</p>
+      </div>
+      <div
+        class="alumni-card"
+        data-name="Fabiyan Dika"
+        data-jurusan="Sistem Informasi"
+      >
+        <h3>Fabiyan Dika</h3>
+        <p>Sistem Informasi</p>
+      </div>
+      <div
+        class="alumni-card"
+        data-name="Rahmat Hidayat"
+        data-jurusan="Teknik Informatika"
+      >
+        <h3>Rahmat Hidayat</h3>
+        <p>Teknik Informatika</p>
+      </div>
+      <div
+        class="alumni-card"
+        data-name="Robby Dwi Afriasyah"
+        data-jurusan="Manajemen dan Bisnis"
+      >
+        <h3>Robby Dwi Afriasyah</h3>
+        <p>Manajemen dan Bisnis</p>
+      </div>
+      <div class="alumni-card" data-name="Fikri" data-jurusan="Akuntansi">
+        <h3>Fikri</h3>
+        <p>Akuntansi</p>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("search-bar")
+        .addEventListener("input", function () {
+          const query = this.value.toLowerCase();
+          const alumniCards = document.querySelectorAll(".alumni-card");
+
+          alumniCards.forEach((card) => {
+            const name = card.getAttribute("data-name").toLowerCase();
+            const jurusan = card.getAttribute("data-jurusan").toLowerCase();
+
+            if (name.includes(query) || jurusan.includes(query)) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

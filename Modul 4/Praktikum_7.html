@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fungsi dan Scope dalam JavaScript</title>
+  </head>
+  <body>
+    <script>
+      //Fungsi Sederhana
+      function tambah(a, b) {
+        return a + b;
+      }
+      //Fungsi dengan parameter default
+      function greet(nama = "Pengguna") {
+        console.log("Halo, " + nama + "!");
+      }
+      //Fungsi dengan fungsi didalamnya
+      function outerFunction() {
+        let outerVar = "Variabel luar";
+        function innerFunction() {
+          let innerVar = "Variabel dalam";
+          console.log(outerVar); //Akses variabel luar
+          console.log(innerVar); //Akses variabel dalam
+        }
+        innerFunction();
+      }
+      //Memanggil Fungsi
+      console.log("Hasil Penjumlahan: " + tambah(5, 10));
+      greet("John");
+      outerFunction();
+
+      //Scope
+      let globalVar = "Variabel global";
+      function checkScope() {
+        let localVar = "Variabel lokal";
+        console.log(globalVar); //Akses variabel global
+        console.log(localVar); //Akses variabel lokal
+      }
+
+      checkScope();
+      //console.log(localVar);//Ini akan menghasilkan error karena localVar tidak diakses disini
+    </script>
+  </body>
+</html>
