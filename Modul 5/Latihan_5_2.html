@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Alumni UNIKU</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #f4f4f4;
+      }
+
+      button {
+        margin: 2px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Daftar Alumni UNIKU</h1>
+    <button id="addRow">Tambah Baris</button>
+    <table id="alumniTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Dede Irawan</td>
+          <td>dede.irawan@uniku.ac.id</td>
+          <td>
+            <button class="edit">Edit</button>
+            <button class="delete">Hapus</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Heri Gustaman</td>
+          <td>heri.gustaman@uniku.ac.id</td>
+          <td>
+            <button class="edit">Edit</button>
+            <button class="delete">Hapus</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script_2.js"></script>
+  </body>
+</html>

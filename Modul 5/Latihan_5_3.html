@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Alumni UNIKU</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        color: #4caf50;
+      }
+
+      #hoverProfile {
+        width: 150px;
+        height: 150px;
+        background-color: lightgray;
+        margin: 20px 0;
+        text-align: center;
+        line-height: 150px;
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        border: 1px solid #ccc;
+        overflow: hidden;
+      }
+
+      #hoverProfile img {
+        height: auto;
+        transition: transform 0.3s, filter 0.3s;
+      }
+
+      #output {
+        max-width: 100%;
+        margin-top: 20px;
+        color: green;
+      }
+
+      #windowSize {
+        margin-top: 20px;
+        color: blue;
+      }
+
+      form {
+        margin-top: 20px;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="file"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+      }
+
+      button {
+        padding: 10px 15px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      td img {
+        width: 100px;
+        height: auto;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .action-buttons button {
+        margin: 0 5px;
+        padding: 5px 10px;
+        color: white;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .action-buttons button.delete {
+        background-color: #f44336;
+      }
+
+      .action-buttons button:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Web Alumni UNIKU</h1>
+
+    <!-- Event Mouse -->
+    <button id="contactButto">Hubungi Alumni</button>
+    <div id="hoverProfile">
+      <img src="gambar1.jpg" alt="Profil Alumni 1" />
+    </div>
+
+    <!-- Event Keyboard -->
+    <input type="text" id="searchAlumni" placeholder="Cari alumni..." />
+
+    <!-- Event Form -->
+    <form id="alumniForm">
+      <label for="name">Nama Alumni:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Masukkan nama alumni"
+      />
+
+      <label for="year">Tahun Kelulusan:</label>
+      <input
+        type="text"
+        id="year"
+        name="year"
+        placeholder="Masukkan tahun kelulusan"
+      />
+
+      <label for="photo">Photo Alumni:</label>
+      <input type="file" id="photo" name="photo" accept="image/*" />
+
+      <button type="submit">Tambahkan Alumni</button>
+    </form>
+
+    <!-- Tabel Data Alumni -->
+    <table id="alumniTable">
+      <thead>
+        <tr>
+          <th>Nama Alumni</th>
+          <th>Photo</th>
+          <th>Tahun Kelulusan</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data alumni akan ditambahkan di sini -->
+      </tbody>
+    </table>
+
+    <!-- Event Dokumen/Window -->
+    <p id="windowSize">Ukuran jendela:</p>
+
+    <!-- Output untuk event kustom -->
+    <p id="output"></p>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scrip_3.js"></script>
+  </body>
+</html>
