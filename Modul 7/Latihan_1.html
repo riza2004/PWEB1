@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buku Tamu CRUD</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h2>Buku Tamu</h2>
+      <!-- Table to Display -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Kode</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Pesan</th>
+          </tr>
+        </thead>
+        <tbody id="guestTableBody">
+          <!-- Guest rows will be appended here -->
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        const script_url =
+          "https://script.google.com/macros/s/AKfycbxoMt5UI9NYBNYtru70KE05GK_ehL8clQhmKqxSMuEH7vhHpajRLIZeLtnicQDmphVr4Q/exec"; // Ganti dengan URL endpoint server
+
+        // Load guests on page load
+        loadGuests();
+
+        // Load guests into the table
+        function loadGuests() {
+          $.ajax({
+            url: script_url,
+            type: "GET",
+            data: { action: "read" },
+            dataType: "json",
+            success: function (response) {
+              const tbody = $("#guestTableBody");
+              tbody.empty(); // Clear the table body
+
+              response.forEach((guest) => {
+                tbody.append(`
+                                <tr>
+                                    <td>${guest.Kode}</td>
+                                    <td>${guest.Nama}</td>
+                                    <td>${guest.Email}</td>
+                                    <td>${guest.Pesan}</td>
+                                </tr>
+                            `);
+              });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.error("Request failed: ", textStatus, errorThrown);
+            },
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
