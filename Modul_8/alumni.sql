@@ -1,0 +1,7 @@
+CREATE TABLE alumni (
+	id INT(10) NOT NULL AUTO_INCREMENT,
+	name VARCHAR(100) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
+	graduation_year INT(10) NOT NULL,
+	job_title VARCHAR(100) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
+	PRIMARY KEY (id) USING BTREE
+)
